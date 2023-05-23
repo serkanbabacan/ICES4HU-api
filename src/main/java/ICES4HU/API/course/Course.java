@@ -10,8 +10,8 @@ import lombok.Data;
 public class Course {
 
     private @Id @GeneratedValue Long id;
-    String course_name;
-    String semester;
+    private String course_name;
+    private String semester;
     // One to One Rel.
     // Instructor instructor
 }
