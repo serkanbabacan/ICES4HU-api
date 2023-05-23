@@ -43,6 +43,7 @@ public class CourseController {
                 .map(course -> {
                     course.setCourse_name(newCourse.getCourse_name());
                     course.setSemester(newCourse.getSemester());
+                    course.setSurvey(newCourse.getSurvey());
                     return repository.save(course);
                 })
                 .orElseGet(() -> {

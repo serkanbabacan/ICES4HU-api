@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 class SurveyController {
-    
+
     private final SurveyRepository repository;
     private final SurveyModelAssembler assembler;
     
@@ -18,8 +18,6 @@ class SurveyController {
         this.repository = repository;
         this.assembler = assembler;
     }
-
-    // Aggregate root
 
     @GetMapping("/surveys")
     ResponseEntity<?> all() {
@@ -62,7 +60,7 @@ class SurveyController {
 
         Survey updatedSurvey = repository.findById(id)
                 .map(survey -> {
-                    survey.setCourse_id(newSurvey.getCourse_id());
+                    survey.setCourse(newSurvey.getCourse());
                     survey.setStudent_id(newSurvey.getStudent_id());
                     survey.setSurvey_name(newSurvey.getSurvey_name());
                     survey.setSurvey_date(newSurvey.getSurvey_date());

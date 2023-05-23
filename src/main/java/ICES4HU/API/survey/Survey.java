@@ -1,5 +1,6 @@
 package ICES4HU.API.survey;
 
+import ICES4HU.API.course.Course;
 import ICES4HU.API.question.Question;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -17,9 +18,9 @@ public class Survey {
 
     private @Id @GeneratedValue Long id;
 
-    //Change this when course implemented
-    //private Course course;
-    private int course_id;
+    @ManyToOne
+    private Course course;
+
     private int student_id;
     private String survey_name;
     private Date survey_date;
