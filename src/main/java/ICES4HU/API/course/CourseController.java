@@ -44,6 +44,7 @@ public class CourseController {
                     course.setCourse_name(newCourse.getCourse_name());
                     course.setSemester(newCourse.getSemester());
                     course.setSurvey(newCourse.getSurvey());
+                    course.setInstructor(newCourse.getInstructor());
                     return repository.save(course);
                 })
                 .orElseGet(() -> {
