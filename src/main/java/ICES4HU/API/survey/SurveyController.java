@@ -61,11 +61,9 @@ class SurveyController {
         Survey updatedSurvey = repository.findById(id)
                 .map(survey -> {
                     survey.setCourse(newSurvey.getCourse());
-                    survey.setStudent_id(newSurvey.getStudent_id());
-                    survey.setSurvey_name(newSurvey.getSurvey_name());
-                    survey.setSurvey_date(newSurvey.getSurvey_date());
-                    survey.setSurvey_text(newSurvey.getSurvey_text());
-                    survey.setSurvey_title(newSurvey.getSurvey_title());
+                    survey.setTitle(newSurvey.getTitle());
+                    survey.setDescription(newSurvey.getDescription());
+                    survey.setSemester(newSurvey.getSemester());
                     return repository.save(survey);
                 })
                 .orElseGet(() -> {
